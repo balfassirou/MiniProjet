@@ -27,8 +27,7 @@ public class MenuPrincipal
                            "\t\t\t\t\t\t\t*                     GESTION D'UNE FORMATION                     *\n"+
                            "\t\t\t\t\t\t\t*******************************************************************\n");
         System.out.println("\t\t\t\t\t\t\t\t\t1 - GESTION GROUPE \n\t\t\t\t\t\t\t\t\t2 - GESTION ETUDIANT"
-                + "\n\t\t\t\t\t\t\t\t\t3 - GESTION PROFESSEUR  \n\t\t\t\t\t\t\t\t\t4 - GESTION GROUPE-GROUPE "
-                + "\n\t\t\t\t\t\t\t\t\t5 - QUITER\n");
+                + "\n\t\t\t\t\t\t\t\t\t3 - GESTION PROFESSEUR  \n\t\t\t\t\t\t\t\t\t4 - QUITER\n ");
         System.out.println("\t\t\t\t\t\t\t\t=====***Veuller choisur votre Option SVP:***=====");
     }
     
@@ -61,7 +60,7 @@ public class MenuPrincipal
                          String nomGroupe = entrer.next();
                          System.out.println("Entrer la date de création du groupe: ");
                          String dateCreation = entrer.next();
-                         System.out.println("Entrer le nombre d'étudiant groupe: ");
+                         System.out.println("Entrer le nombre d'étudiant du groupe: ");
                          int nombreEtudiant = entrer.nextInt();
                          
                           Groupe groupe = new Groupe(id,nomGroupe, dateCreation, nombreEtudiant);
@@ -92,7 +91,7 @@ public class MenuPrincipal
                          int idd = entrer.nextInt();
                          Groupe groupe2 = groupeImp.getGroupeById(idd);
                          
-                          System.out.println(groupe2.getNomGroupe()+"\n "+groupe2.getDateCreation()+"\n "+groupe2.getNombreEtudiant()); 
+                          System.out.println("Nom du groupe: "+groupe2.getNomGroupe()+"\n"+groupe2.getDateCreation()+"\n"+groupe2.getNombreEtudiant()); 
                           System.out.println("Vous avez les details d'un groupe\n");
                           // Fin de l'affichage des details d'un groupe
                         break;
@@ -114,7 +113,7 @@ public class MenuPrincipal
                           System.out.println(groupe4.getNomGroupe());
                           System.out.println("Vous avez tous les groupes\n");
                           //Fin d'affiche des groupes
-                     }
+                          }
                           break;
                      case 6:System.out.println("Fin: Vous avez bien quitter le programme !");
                           break;
@@ -199,7 +198,7 @@ public class MenuPrincipal
                         /// Fin de la modification d'un etudiant
                       break;
                       case 3:
-                         System.out.println(" Voire les details d'un etudiant");
+                         System.out.println("----------Voire les details d'un etudiant----------");
                          System.out.println("Donner l'id de l'etudiant");
                          int idg=entrer.nextInt();
                            Etudiant etudiant4=etudiantImp.getEtudiantById(idg);
@@ -217,16 +216,16 @@ public class MenuPrincipal
                                   Etudiant etudiant3=etudiantImp.getEtudiantById(iddel);
                            
                                   etudiantImp.removeEtudiant(etudiant3);
-                                  System.out.println("Le groupe a été ajouter avec succées\n");
+                                  System.out.println("L'étudiant a été supprimer avec succées\n");
                                    /// Fin de la suppresion d'un etudiant
                             break;
-                           case 5:System.out.println(" Afficher tous les etudiants");
+                           case 5:System.out.println("----------Afficher tous les etudiants----------");
                            List<Etudiant> etudiants=etudiantImp.getAllEtudiant();
                            for(Etudiant etudiant2:etudiants){
                            System.out.println(etudiant2.getId()+"\n"+etudiant2.getMatricule()+"\n"+ etudiant2.getPrenom() +"\n"+
                                    etudiant2.getNom() +"\n"+ etudiant2.getDateNaissance() +"\n"+ etudiant2.getLieuNaissance() /*+"\n"+ 
                                    etudiant2.getAdresse() +"\n"+ etudiant2.getTelephone() +"\n"+ etudiant2.getEmail() +"\n"+etudiant2.getNationalite() +"\n"+ 
-                                   etudiant2.getGenre() +"\n"+ etudiant2.getSituationMatrimoniale() +"\n"+ etudiant2.getGroupeSanguin()*/); 
+                                   etudiant2.getGenre() +"\n"+ etudiant2.getSituationMatrimoniale()*/ +"\n"+ etudiant2.getGroupeSanguin()); 
                           System.out.println("Vous avez tous les etudiants\n");
                            }
                            break;
@@ -287,29 +286,29 @@ public class MenuPrincipal
                         System.out.println("Entrer l'id de l'etudiant: ");
                         int idUpd = entrer.nextInt();                   
                         Professeur professeur1 = professeurImp.getProfesseurById(idUpd);
-                        System.out.println("Entrer le matricule l'etudiant: ");
+                        System.out.println("Entrer le matricule du professeur: ");
                         String matriculeUpd = entrer.next();
-                        System.out.println("Entrer le prenom de l'etudiant: ");
+                        System.out.println("Entrer le prenom du professeur: ");
                         String prenomUpd = entrer.next();
-                        System.out.println("Entrer le nom de l'etudiant: ");
+                        System.out.println("Entrer le nom du professeur: ");
                         String nomUpd = entrer.next();
-                        System.out.println("Entrer la date de naissance de l'etudiant: ");
+                        System.out.println("Entrer la date de naissance du professeur: ");
                         String dateNaissanceUpd = entrer.next();
-                        System.out.println("Entrer le lieu de naissance de l'etudiant: ");
+                        System.out.println("Entrer le lieu de naissance du professeur: ");
                         String lieuNaissancUpde = entrer.next();
-                        System.out.println("Entrer l'adresse de l'etudiant: ");
+                        System.out.println("Entrer l'adresse du professeur: ");
                         String adresseUpd = entrer.next();
-                        System.out.println("Entrer le telephone de l'etudiant: ");
+                        System.out.println("Entrer le telephone du professeur: ");
                         String telephoneUpd = entrer.next();
-                        System.out.println("Entrer l'email de l'etudiant: ");
+                        System.out.println("Entrer l'email du professeur: ");
                         String emailUpd = entrer.next();
-                        System.out.println("Entrer la nationalite de l'etudiant: ");
+                        System.out.println("Entrer la nationalite du professeur: ");
                         String nationaliteUpd = entrer.next();
-                        System.out.println("Entrer le genre de l'etudiant: ");
+                        System.out.println("Entrer le genre du professeur: ");
                         String genreUpd = entrer.next();
-                        System.out.println("Entrer la situation matrimoniale de l'etudiant: ");
+                        System.out.println("Entrer la situation matrimoniale du professeur: ");
                         String situationMatrimonialeUpd = entrer.next();
-                        System.out.println("Entrer le groupe sangin de l'etudiant: ");
+                        System.out.println("Entrer le specialite du professeur: ");
                         String groupeSanguinUpd = entrer.next();
                                                          
                         professeurImp.updateProfesseur(professeur1);
@@ -338,53 +337,25 @@ public class MenuPrincipal
                           System.out.println("Le professeur a été avec succées\n");
                           /// Fin de la suppresion d'un professeur
                       break;
-                      case 5:System.out.println(" Afficher tous les professeurs");
+                      case 5:System.out.println("----------Afficher tous les professeurs----------");
                            List<Professeur> professeurs=professeurImp.getAllProfesseur();
                            for(Professeur professeur5:professeurs){
-                           System.out.println(professeur5.getPrenom()+" "+professeur5.getNom());
+                           System.out.println(professeur5.getId()+"\n"+professeur5.getMatricule()+"\n"+ professeur5.getPrenom() +"\n"+
+                                   professeur5.getNom() +"\n"+ professeur5.getDateNaissance() +"\n"+ professeur5.getLieuNaissance()/* +"\n"+ 
+                                   professeur5.getAdresse() +"\n"+ professeur5.getTelephone() +"\n"+ professeur5.getEmail() +"\n"+professeur5.getNationalite() +"\n"+ 
+                                   professeur5.getGenre() +"\n"+ professeur5.getSituationMatrimoniale()*/ +"\n"+ professeur5.getSpecialite());
                            };break;
                       case 6:System.out.println("Fin: Vous avez bien quitter le programme !");
                               System.exit(0);break;
-                      default:System.out.println("Veuillez choisit un numero valide !!!");break;
+                      default:System.out.println("Error: Veuillez faire un bon choix !");break;
                  }
                  break;
                  
                  
             case 4:
-               System.out.println("=====***Vous avez choisis la gestion des GROUPES-ETUDIANTS***=====");
-               System.out.println("1 - Créer un Groupe-Etudiant \n2 - Modifier un Groupe-Etudiant \n3 - Voir les détails d'un Groupe-Etudiant  \n4 - Supprimer un Groupe-Etudiant \n5 - Afficher tous les Groupes-Etudiants \n6 - Quitter");
-               System.out.println("Taper votre choix:");
-               int choix4 = entrer.nextInt();
-                 //Scanner en=new Scanner(System.in);
-                 choix4=entrer.nextInt();
-                 switch(choix){
-                      case 1 : System.out.println("----------Ajout d'un Groupe-Etudiant----------");
-                          break;
-                          
-                      case 2 : System.out.println("----------Modification d'un Groupe-Etudiant----------");
-                          break;
-                          
-                      case 3 : System.out.println("----------Voir les détails d'un Groupe-Etudiant----------");
-                            break;
-                      case 4 : System.out.println("----------Supprimer un Groupe-Etudiant----------");
-                                                    
-                           break;
-                                               
-                      case 5 : System.out.println("----------Afficher tous les Groupe-Etudiant----------");
-                                                    
-                           break;
-                                              
-                      case 6 : System.out.println("Fin: Vous avez bien quitter le programme !");
-                                                   
-                           break;
-                                           //     case 9 : arret = true; break;
-                                                default : System.out.println("Error: Veuillez faire un bon choix !");
-                 }
-                 break;
-                 
-            case 5: System.out.println("A la prochaine !");
-            System.exit(0);break;
-            default: System.out.println("Veuillez choisir entre 1 et 5");break;
+                System.out.println("=====*****FIN: Vous avez bien quitter le programme MERCI.*****=====");
+                System.exit(0);break;
+                default: System.out.println("Error: Veuillez faire un bon choix !");break;
             }
         }
         while(choix!=5);
